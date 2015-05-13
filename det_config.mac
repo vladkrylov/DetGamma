@@ -1,0 +1,9 @@
+#DIRECTORY det_box_standard_diffuse_white
+/DetGamma/detector/CrystalLength 15
+/DetGamma/detector/CrystalShape box
+/DetGamma/detector/Coating diffuse_white
+/DetGamma/detector/UsePhotonisQE false
+/DetGamma/detector/AddGrease true
+/DetGamma/detector/WithWindow true
+/DetGamma/output/RootFileName det_box_standard_diffuse_white/DetGamma.root
+/DetGamma/output/Library /home/rita/geant4_workdir/tmp/Linux-g++/mainDetGamma/libDetGammaClassesDict.so

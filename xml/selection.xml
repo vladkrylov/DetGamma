@@ -1,0 +1,7 @@
+<lcgdict>
+<class name="std::basic_string<char>" />
+<class name="G4String"/>
+<class name="Particle"/>
+<class name="std::vector<Particle>"/>
+<class name="Event"/>
+</lcgdict>
