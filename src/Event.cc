@@ -188,6 +188,7 @@ void Event::clean() {
   ngamma_cherenkov = 0  ;
   nelectrons = 0 ;
   time = -1000.0 ;
+  time_cherenkov = -1000.0 ;
   particles.clear() ;
   photons.clear() ;
 }
