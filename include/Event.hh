@@ -47,7 +47,8 @@ class Event {
 
   G4int nelectrons ;
 
-  G4double time ; // arrival time in ps  of the first photon detected by the photocathode (efficiency is taken into account) 
+  G4double time ; // arrival time in ps  of the first photon detected by the photocathode (efficiency is taken into account)
+  G4double time_cherenkov; // arrival time in ps  of the first cherenkov photon detected by the photocathode (efficiency is taken into account)
 
   std::vector<Particle> particles ;
   

@@ -119,7 +119,7 @@ Event::Event() :  photonisQE(false), evtnum(0),
 		  ngamma_cathode1(0), ngamma_cathode_qe1(0), 
 		  ngamma_window(0), ngamma_window1(0), ngamma_grease(0), 
 		  ngamma_cherenkov(0), nelectrons(0), 
-		  time(-1000.0) {}
+		  time(-1000.0), time_cherenkov(-1000.0) {}
 Event::~Event() {}
 
 void Event::fill(G4int id,  const G4String& process_name, G4double energy, G4double theta, 
@@ -170,6 +170,8 @@ void Event::fill(G4int id,  const G4String& process_name, G4double energy, G4dou
   ngamma_cathode_qe++ ;
   if (PM_number == 1) ngamma_cathode_qe1++ ;
   if (time < 0 || time_in < time) time = time_in ;
+  if ((process_name == "Cerenkov") && (time_cherenkov < 0 || time_in < time_cherenkov))
+	  time_cherenkov = time_in ;
   photons.push_back(Particle(id, processID, energy/eV, theta, pre_theta, x, y, z, time_in)) ;
 
 }
