@@ -216,9 +216,11 @@ void DetGammaSteppingAction::UserSteppingAction(const G4Step* step)
 	     << G4endl ;
     }
     
-
+    bool cherenkov_photon = false;
+    const G4String& process_aux = track->GetCreatorProcess()->GetProcessName();
+    if ( process_aux == "Cerenkov") cherenkov_photon = true ;
     _tree_manager->fill(id,process,energy,acos(costheta)*180/pi,position.x(), position.y(), position.z(), time, PM_number,
-			acos(pre_costheta)*180/pi);      
+			acos(pre_costheta)*180/pi, cherenkov_photon);
   
   }
     

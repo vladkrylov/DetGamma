@@ -92,9 +92,10 @@ void TreeManager::endEvent() {
 }
 
 void TreeManager::fill(G4int id,  const G4String& process_name, G4double energy, G4double theta, 
-		       G4double x, G4double y, G4double z, G4double time, G4int PM_number, G4double pre_theta) 
+		       G4double x, G4double y, G4double z, G4double time, G4int PM_number, G4double pre_theta,
+			   bool cherenkov_photon)
 {
-  _event->fill(id,process_name,energy,theta,x,y,z,time, PM_number, pre_theta) ;
+  _event->fill(id,process_name,energy,theta,x,y,z,time, PM_number, pre_theta, cherenkov_photon) ;
 }
 
 void TreeManager::openPosFile() {

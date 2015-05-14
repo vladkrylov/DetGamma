@@ -124,7 +124,7 @@ Event::~Event() {}
 
 void Event::fill(G4int id,  const G4String& process_name, G4double energy, G4double theta, 
 		 G4double x, G4double y, G4double z, 
-		 G4double time_in, G4int PM_number, G4double pre_theta) 
+		 G4double time_in, G4int PM_number, G4double pre_theta, bool cherenkov_photon)
 {
  
   bool inrange = false  ;
@@ -170,7 +170,7 @@ void Event::fill(G4int id,  const G4String& process_name, G4double energy, G4dou
   ngamma_cathode_qe++ ;
   if (PM_number == 1) ngamma_cathode_qe1++ ;
   if (time < 0 || time_in < time) time = time_in ;
-  if ((process_name == "Cerenkov") && (time_cherenkov < 0 || time_in < time_cherenkov))
+  if (cherenkov_photon && (time_cherenkov < 0 || time_in < time_cherenkov))
 	  time_cherenkov = time_in ;
   photons.push_back(Particle(id, processID, energy/eV, theta, pre_theta, x, y, z, time_in)) ;
 

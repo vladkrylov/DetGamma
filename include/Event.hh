@@ -66,7 +66,8 @@ public :
 
   void fill(G4int id,  const G4String& process_name, G4double energy, 
 	    G4double theta, G4double x, G4double y, G4double z, 
-	    G4double time_in, G4int PM_number, G4double pre_theta) ;
+	    G4double time_in, G4int PM_number, G4double pre_theta,
+		bool cherenkov_photon) ;
 
   static G4double QuantumEfficiency_standard(G4double energy) ;
   static G4double QuantumEfficiency_Photonis(G4double energy) ;
