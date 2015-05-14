@@ -74,7 +74,7 @@ void DetGammaSteppingAction::UserSteppingAction(const G4Step* step)
    
       if (G4RunManager::GetRunManager()->GetVerboseLevel()>0) 
 	G4cout << ">>>>>>>>>> Secondary:\t " << process << "\t " << id << "\t " << energy/keV << " keV \t " << costheta << G4endl ;
-      _tree_manager->fill(id,process,energy,acos(costheta), position.x(), position.y(), position.z(), time, 0, 0.0);      
+      _tree_manager->fill(id,process,energy,acos(costheta), position.x(), position.y(), position.z(), time, 0, 0.0, false);
     }
     
   } else if (step->GetTrack()->GetParticleDefinition()->GetPDGEncoding() == 11){
@@ -96,7 +96,7 @@ void DetGammaSteppingAction::UserSteppingAction(const G4Step* step)
 	G4cout << ">>>>>>>>>> Cherenkov photon :\t " << process << "\t "<< id << "\t " << energy/eV << " eV \t " << costheta << G4endl ;
 
       // optical photons have PDGEncoding 0, so add manually PDG id 22
-      _tree_manager->fill(22,process,energy,acos(costheta),position.x(), position.y(), position.z(), time, 0, 0.0);
+      _tree_manager->fill(22,process,energy,acos(costheta),position.x(), position.y(), position.z(), time, 0, 0.0, false);
 
     }
   } 
